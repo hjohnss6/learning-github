@@ -1,18 +1,12 @@
 # learning-github
 
-
-
-
-
-
 ## branch strat
 
 - `main` is protected and can only be changed through PR
 
 A PR must have all actions completed before merge is enabled.
 
-## CI/CD 
-
+## CI/CD
 
 ```mermaid
   graph TD;
