@@ -8,6 +8,8 @@ A PR must have all actions completed before merge is enabled.
 
 ## CI/CD
 
+Shows the CI:
+
 ```mermaid
   graph TD;
       A[PR: feature branch -> main]-->B;
