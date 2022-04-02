@@ -1,0 +1,28 @@
+name: pr-ci
+on:
+  pull_request:
+    branches:
+      - "main"
+jobs:
+  markdownlint:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    name: mdl
+    runs-on: ${{matrix.os}}
+    steps:
+      - name: Checkout the commit that triggered the workflow
+        uses: actions/checkout@v2
+      - name: Run mdl
+        uses: actionshub/markdownlint@main
+  encourage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{github.event.number}}
+          body: |
+            Nice work! 
+
+    
