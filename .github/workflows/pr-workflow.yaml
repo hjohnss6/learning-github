@@ -4,10 +4,16 @@ on:
     branches:
       - "main"
 jobs:
-  linting:
+  markdownlint:
+    name: mdl
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout the commit that triggered the workflow
+        uses: actions/checkout@v2
+
+      - name: Run mdl
+        uses: actionshub/markdownlint@main
+
   unit-testing:
     runs-on: ubuntu-latest
     steps:
