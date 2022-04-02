@@ -13,24 +13,12 @@ jobs:
     steps:
       - name: Checkout the commit that triggered the workflow
         uses: actions/checkout@v2
-
       - name: Run mdl
         uses: actionshub/markdownlint@main
-
-  unit-testing:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
   encourage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the commit that triggered the workflow
-        uses: actions/checkout@v2
-      - name: results
-        id: world
-        run: echo ${{steps.world.outcome}}
       - name: Create comment
-        if: ${{steps.world.outcome}}
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{github.event.number}}
