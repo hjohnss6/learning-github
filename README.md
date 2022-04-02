@@ -12,6 +12,5 @@ A PR must have all actions completed before merge is enabled.
   graph TD;
       A[PR: feature branch -> main]-->B;
       B{linting}-->C;
-      C{testing}-->D;
       D{Encouraging}-->E[Merge to main];
 ```
