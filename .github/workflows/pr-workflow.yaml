@@ -21,6 +21,10 @@ jobs:
   encourage:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout the commit that triggered the workflow
+        uses: actions/checkout@v2
+      - name: results
+        run: ./.github/scripts/echo.sh
+        shell: bash
 
     
