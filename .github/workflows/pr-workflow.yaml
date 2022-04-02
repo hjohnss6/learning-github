@@ -5,8 +5,11 @@ on:
       - "main"
 jobs:
   markdownlint:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
     name: mdl
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     steps:
       - name: Checkout the commit that triggered the workflow
         uses: actions/checkout@v2
@@ -24,9 +27,10 @@ jobs:
       - name: Checkout the commit that triggered the workflow
         uses: actions/checkout@v2
       - name: results
-        run: ./.github/scripts/echo.sh
-        shell: bash
+        id: world
+        run: echo ${{steps.world.outcome}}
       - name: Create comment
+        if: ${{steps.world.outcome}}
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{github.event.number}}
