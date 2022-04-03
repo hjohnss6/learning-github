@@ -26,6 +26,7 @@ if the hooks do not go through the commit will not be done.
 
 ## configure
 
+Configuration are stored in `.pre-commit-config`
 
 ## Refs
 
