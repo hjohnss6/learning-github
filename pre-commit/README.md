@@ -12,7 +12,9 @@ the code.
 
 - install the pre-commit lib by `pip install pre-commit`
 - setup in already existing git repo by `pre-commit install`.
+
 This creates a `hooks` dir in the `.git` dir.
+
 - create a `.pre-commit-config` file with the settings. (what to run)
 
 ## How to use
