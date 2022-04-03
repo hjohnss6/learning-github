@@ -1,4 +1,4 @@
-## Title
+# Title
 
 ```mermaid
 flowchart LR;
@@ -14,16 +14,12 @@ flowchart LR;
             m1podn{{Model Pod N}}
 
         end
-
-        
     end
 
     subgraph ddep[Data Provider]
         direction BT
         db1[(database)]
-
     end
-
     dsvc --> db1
 
     m1svc --> m1pod1
@@ -39,7 +35,6 @@ flowchart LR;
     class m2pod1,m2podn k8s;
     class user plain;
     class cluster cluster;
-
 
 ```
 
