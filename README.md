@@ -16,3 +16,7 @@ Shows the CI:
       B{linting}-->C;
       C{Encouraging}-->D[Merge to main];
 ```
+
+## Env
+
+`conda activate learninggithub`
