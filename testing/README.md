@@ -108,12 +108,15 @@ def test_with_fixture(an_example_fixture):
 
 Fixtures can be used to help out with data and database connections.
 
-Mark that the fixture is not executed as a normal py function. Instead, this is called just like a variable. This is called dependency injection.
+Mark that the fixture is not executed as a normal py function.
+Instead, this is called just like a variable. This is called
+dependency injection.
 
 ## scopes of fixtures
 
 Default, the fixture will be executed in every function it is used
-in. This is called a `function` scope. This might be inefficient. The available scopes are:
+in. This is called a `function` scope. This might be inefficient.
+The available scopes are:
 
 - function (default)
 - class
@@ -166,8 +169,15 @@ By adding the decorator:
 
 will run test but does not take the result into account.
 
+## tmpdir
+
+Sometimes we want to create some filesystem objects as part of
+test. This can be done in a temporary dir, using a fixture in
+pytest called `tmpdir`.
+
 ## Refs
 
 - [Tutorialspoint](https://www.tutorialspoint.com/pytest)
 - [Pytest](https://docs.pytest.org/en/7.1.x/)
 - [Scopes on pytest fixture scopes](https://betterprogramming.pub/understand-5-scopes-of-pytest-fixtures-1b607b5c19ed)
+- [tmpdir](https://docs.pytest.org/en/6.2.x/tmpdir.html)

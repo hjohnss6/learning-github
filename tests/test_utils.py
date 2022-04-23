@@ -45,3 +45,15 @@ def test_skipping_this():
 @pytest.mark.xfail
 def test_running_but_not_break():
     assert False
+
+
+def test_empty_dir(tmp_path):
+
+    CONTENT = "Hello"
+
+    d = tmp_path / "sub"
+    d.mkdir()
+    p = d / "hello.txt"
+    p.write_text(CONTENT)
+    assert p.read_text() == CONTENT
+    assert len(list(tmp_path.iterdir())) == 1
