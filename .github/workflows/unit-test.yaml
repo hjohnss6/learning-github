@@ -1,0 +1,16 @@
+name: Unit-tests PR
+on:
+  pull_request:
+    branches:
+      - "*"
+jobs:
+  unit-test-pr:
+    name: pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the commit that triggered the workflow
+        uses: actions/checkout@v2
+      - name: Install the unit-test requirements
+        run: pip install -r requirements.txt
+      - name: Run pytest without coverage
+        run: pytest tests
