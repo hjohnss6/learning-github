@@ -151,7 +151,6 @@ By adding the decorator:
 
 will run test but does not take the result into account.
 
-
 ## Refs
 
 - [Tutorialspoint](https://www.tutorialspoint.com/pytest)
