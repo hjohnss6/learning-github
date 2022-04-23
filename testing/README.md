@@ -108,6 +108,21 @@ def test_with_fixture(an_example_fixture):
 
 Fixtures can be used to help out with data and database connections.
 
+Mark that the fixture is not executed as a normal py function. Instead, this is called just like a variable. This is called dependency injection.
+
+## scopes of fixtures
+
+Default, the fixture will be executed in every function it is used
+in. This is called a `function` scope. This might be inefficient. The available scopes are:
+
+- function (default)
+- class
+- module
+- package
+- session: run function 1 time per `pytest` execution
+
+A session scoped fixture is probably more suited to be in `conftest.py`
+
 ## Conftest
 
 The fixtures are file scoped. If we would like to have *fixtures* on
@@ -155,3 +170,4 @@ will run test but does not take the result into account.
 
 - [Tutorialspoint](https://www.tutorialspoint.com/pytest)
 - [Pytest](https://docs.pytest.org/en/7.1.x/)
+- [Scopes on pytest fixture scopes](https://betterprogramming.pub/understand-5-scopes-of-pytest-fixtures-1b607b5c19ed)
