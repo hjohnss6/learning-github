@@ -3,7 +3,6 @@
 This documents some things around testing for python.
 Uses pytest specifically.
 
-
 ```
 Pytest is a python based testing framework, which is used
 to write and execute test codes. In the present days of REST
@@ -16,10 +15,10 @@ we can write codes to test API, database, UI, etc.
 
 Just add `pytest` to the requirements.
 
-
 ## Run
 
 Running:
+
 ```
 pytest
 ```
@@ -43,6 +42,7 @@ def test_function_x():
     assert True
 
 ```
+
 This test would pass since the assertion works.
 
 ## Test part of test suite
@@ -63,6 +63,7 @@ the specified directory.
 ```
 pytest -k <substring>
 ```
+
 Will run all tests where function name
 has substring specified.
 
@@ -80,7 +81,6 @@ def test_nameoftest():
 
 If running `pytest -m <name of marker>` only the functions with the
 relevant marker will be executed.
-
 
 ## Fixtures
 
@@ -107,7 +107,6 @@ def test_with_fixture(an_example_fixture):
 ```
 
 Fixtures can be used to help out with data and database connections.
-
 
 ## Conftest
 
@@ -156,3 +155,4 @@ will run test but does not take the result into account.
 ## Refs
 
 - [Tutorialspoint](https://www.tutorialspoint.com/pytest)
+- [Pytest](https://docs.pytest.org/en/7.1.x/)
