@@ -1,0 +1,17 @@
+name: encourage
+on:
+  pull_request:
+    types: [ closed ]
+
+jobs:
+  encourage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{github.event.number}}
+          body: |
+            Nice work! 
+
+    
