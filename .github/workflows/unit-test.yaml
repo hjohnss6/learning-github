@@ -13,4 +13,4 @@ jobs:
       - name: Install the unit-test requirements
         run: pip install -r requirements.txt
       - name: Run pytest without coverage
-        run: pytest tests --no-cov
+        run: pytest tests
